@@ -1,33 +1,194 @@
-(function() {
-  document.addEventListener("DOMContentLoaded", () => {
-    const selectList = document.getElementById('selectList')
+<!DOCTYPE html>
+<html lang="ja">
 
-    selectList.addEventListener("change", (event) => {
-      console.log(event);
-      window.location.hash='page-intro';
-    })
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
 
-    let radio = []
-    let panel = []
-    for(let i=0; i<3; i++){
-      radio[i] = $('.state').eq(i);
-      panel[i] = $('.panel').eq(i);
-    }
+<body>
+  <section class="linkTable">
+    <div>
+      <a class="linkBtn" href="#page-top">TOP</a>
+    </div>
+    <div>
+      <a class="linkBtn" href="#page-intro">About Me</a>
+    </div>
+    <div>
+      <a class="linkBtn" href="#page-intro2">Hobbies</a>
+    </div>
+    <div>
+      <a class="linkBtn" href="#page-intro3">MORE</a>
+    </div>
+  </section>
+  <section class="page" id="page-top">
+    <div class="container" id="page-top-image">
 
-  });
+      <div class="page-slided-top">
+        <select class="dropBtn" id="selectList" name="">
+          <option value="">
+            <a href="#page-top">TOP</a>
+          </option>
+          <option value="">
+            <a href="page-intro">ABOUT ME</a>
+          </option>
+        </select>
+      </div>
+
+      <div class="page-slided-middle">
+        <div class="box-left">
+          Hello! I'm ANNA. <br>
+          Let me introduce myself :D
+        </div>
+
+        <div class="box-right">
+        </div>
+      </div>
+
+      <div class="page-slided-bottom">
+        <a class="nextBtn" href="#page-intro">START</a>
+      </div>
 
 
 
-})();
+    </div>
+  </section>
+  <section class="page" id="page-intro">
+    <div class="container" id="page-intro-image">
 
 
-$('.state').change(function () {
-    $(this).parent().find('.state').each(function () {
-        if (this.checked) {
-            $(this).attr('aria-selected', 'true');
+        <div class="box-right title-text">
+          About ME
+        </div>
 
-        } else {
-            $(this).removeAttr('aria-selected');
-        }
-    });
-});
+      <div class="page-slided-middle">
+        <div class="box-left">
+        </div>
+        <div class="box-right" id="about-me-text">
+          Name: Anna Hu <br>
+          Birth: 02/03 <br>
+          E-mail: AAA@email
+        </div>
+
+      </div>
+
+      <div class="page-slided-bottom">
+        <div class="box-right">
+          <a class="nextBtn" href="#page-intro2">NEXT</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="page" id="page-background">
+    <div class="container">
+
+        <div class="box-left title-text">
+          Background
+        </div>
+
+      <div class="page-slided-top">
+        <div class="box-left">
+          <li>Nan</li>
+        </div>
+      </div>
+
+      <div class="page-slided-bottom">
+        <div class="box-left">
+          <a class="nextBtn" href="#page-intro2">NEXT</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="page" id="page-intro2">
+    <div class="container">
+      <div class="box-left title-text">
+        My Hobbies
+      </div>
+
+      <div class="page-slided-top">
+        <div class="radio-tabs" role="tablist">
+
+          <input class="state" type="radio" title="Starks" name="houses-state" id="starks" role="tab" aria-controls="starks-panel" checked />
+          <input class="state" type="radio" title="Lanisters" name="houses-state" id="lannisters" role="tab" aria-controls="lannisters-panel" />
+          <input class="state" type="radio" title="Targaryens" name="houses-state" id="targaryens" role="tab" aria-controls="targaryens-panel" />
+
+          <div class="tabs" aria-hidden="true">
+            <label for="starks" id="starks-tab" class="tab">Languages</label>
+            <label for="lannisters" id="lannisters-tab" class="tab">Reading</label>
+            <label for="targaryens" id="targaryens-tab" class="tab">Games</label>
+          </div>
+
+          <div class="panels">
+            <ul id="starks-panel" class="panel active" role="tabpanel" aria-labelledby="starks-tab">
+              <p>I have a great passion for learning foreign languages. <br>
+                I started to learn English and Japanese when I was an elmetary student. <br>
+                In senior high school, I chose to take the German language class. <br>
+                And in my college, I learned French for two years. <br>
+                Recently, I just begining my Spanish lesson!</p>
+            </ul>
+            <ul id="lannisters-panel" class="panel" role="tabpanel" aria-labelledby="lannisters-tab">
+              <p>
+                Since my childhood, I have read a lot of books, expecially novels. <br>
+                I love fantastical novels, and my favorite one is The Chrestomanci Series written by Diana wynne jones. <br>
+
+              </p>
+            </ul>
+            <ul id="targaryens-panel" class="panel" role="tabpanel" aria-labelledby="targaryens-tab">
+              <p>
+                I am a game player, that I spend a lot of time on games. <br>
+                Not only playing games, but also watching game strams. <br>
+              </p>
+            </ul>
+          </div>
+        </div
+
+      </div>
+
+      <div class="page-slided-middle">
+      </div>
+
+      <div class="page-slided-bottom">
+        <a class="nextBtn" href="#page-intro3">NEXT</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page" id="page-intro3">
+    <div class="container">
+      <div class="box-right title-text">
+        More
+      </div>
+
+      <div class="page-slided-top">
+
+      </div>
+
+      <div class="page-slided-middle">
+
+      </div>
+
+      <div class="page-slided-bottom">
+        <a class="nextBtn" href="#page-top">Back to Top</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="foot">
+      <a href="#page-top">TOP</a>
+    </div>
+  </section>
+</body>
+
+</html>
