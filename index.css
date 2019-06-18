@@ -1,18 +1,198 @@
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
 }
 
-.page {
-  padding: 8px;
-  min-height: 360px;
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  font-size: 30px;
 }
 
-#page-01{
+.page {
+  padding: 8px;
+  min-height: 100vh;
+  width: 85%;
+}
+
+.page-slided-top {
+  height: 30vh;
+}
+
+.page-slided-middle {
+  height: 30vh;
+}
+
+.page-slided-bottom {
+  height: 40vh;
+}
+
+
+#page-top{
   background: #555;
   color:#FFF;
 }
+
+#page-top-image{
+  background-image: url("./src/cat2.png");
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+  background-size: 50% auto;
+}
+
+#page-intro-image{
+  background-image: url("./src/cat.png");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  background-size: 40% auto;
+}
+
+#page-intro {
+  background: rgb(195, 195, 195);
+}
+
+#about-me-text {
+  font-family: monospace;
+  text-align: right;
+}
+
+.foot {
+  width: 30%;
+  margin: auto;
+  border: 3px solid gray;
+  text-align: center;
+}
+
+.nextBtn {
+  background-color:rgb(159, 201, 142);
+  color: #555;
+  width: 150px;
+  padding: 0.2em 0.5em;
+  font-size: 40px;
+  font-family: sans-serif;
+  text-decoration: none;
+
+  border-radius: 25px 25px 25px 25px;
+
+}
+
+.box-right {
+  min-width: 50%;
+  margin-left: auto;
+  text-align: right;
+  display: block;
+}
+
+.box-left {
+  min-width: 50%;
+  margin-right: auto;
+  display: block;
+}
+
+.linkBtn {
+  background-color:rgb(255, 253, 236);
+  color: rgb(78, 77, 77);
+  padding: 0.5em 1em;
+  font-size: 25px;
+  font-family: sans-serif;
+  text-decoration: none;
+  display:block;
+}
+
+.linkBtn:hover {
+  background-color: rgb(86, 152, 91);
+  color: rgb(255, 253, 236);
+}
+
+tr td{
+    padding: 5px;
+
+}
+
+.linkTable {
+  width: 14%;
+  height: 100vh;
+  background-color:rgb(255, 253, 236);
+  border-spacing: 8px;
+  text-align: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+
+.title-text {
+  font-size: 60px;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1em;
+    background-color: #ddd;
+}
+
+/* Android 2.3 :checked fix */
+@keyframes fake {
+    from {
+        opacity: 1;
+    }
+    to {
+        opactity: 1
+    }
+}
+body {
+    animation: fake 1s infinite;
+}
+
+.radio-tabs .state {
+    position: absolute;
+    left: -10000px;
+}
+#starks:focus ~ .tabs #starks-tab,
+#lannisters:focus ~ .tabs #lannisters-tab,
+#targaryens:focus ~ .tabs #targaryens-tab {
+    box-shadow: 0 0 3px 3px rgba(74, 255, 0, 0.5);
+}
+
+.radio-tabs .tab {
+    display: inline-block;
+    padding: .5em;
+    vertical-align: top;
+    background-color: #eee;
+    cursor: hand;
+    cursor: pointer;
+}
+.radio-tabs .tab:hover {
+    background-color: #fff;
+}
+
+#starks[aria-selected] ~ .tabs #starks-tab,
+#lannisters[aria-selected] ~ .tabs #lannisters-tab,
+#targaryens[aria-selected] ~ .tabs #targaryens-tab,
+#starks:checked ~ .tabs #starks-tab,
+#lannisters:checked ~ .tabs #lannisters-tab,
+#targaryens:checked ~ .tabs #targaryens-tab {
+    background-color: #fff;
+    border-bottom: .3em solid #fff;
+    cursor: default;
+}
+
+.radio-tabs .panels {
+    background-color: #fff;
+    padding: .5em;
+}
+.radio-tabs .panel {
+    display: none;
+}
+#starks[aria-selected] ~ .panels #starks-panel,
+#lannisters[aria-selected] ~ .panels #lannisters-panel,
+#targaryens[aria-selected] ~ .panels #targaryens-panel,
+#starks:checked ~ .panels #starks-panel,
+#lannisters:checked ~ .panels #lannisters-panel,
+#targaryens:checked ~ .panels #targaryens-panel {
+    display: block;
+  }
